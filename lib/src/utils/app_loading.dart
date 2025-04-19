@@ -37,10 +37,11 @@ abstract final class AppLoading {
   }
 
   static void hide() {
+    if (Get.isSnackbarOpen) {
+      Get.back(closeOverlays: true);
+    }
+
     if (Get.isDialogOpen ?? false) {
-      if (Get.isSnackbarOpen) {
-        Get.closeAllSnackbars();
-      }
       Get.back();
     }
   }
