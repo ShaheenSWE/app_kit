@@ -5,3 +5,4 @@ export 'src/utils/app_http.dart';
 export 'src/utils/app_theme.dart';
 export 'src/utils/app_dialog.dart';
 export 'src/utils/app_bottom_sheet.dart';
+export 'src/utils/app_bottom_navigation.dart';
