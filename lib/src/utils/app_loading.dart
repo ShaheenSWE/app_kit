@@ -27,7 +27,7 @@ abstract final class AppLoading {
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          color: Colors.black45,
+          color: Colors.black26,
           alignment: Alignment.center,
           child: _defaultSpinner,
         ),
