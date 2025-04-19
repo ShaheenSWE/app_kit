@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AppBottomNavigation extends StatelessWidget {
-  final List<AppBottomNavItem> items;
+  final List<AppBottomNavigationItem> items;
   final int initialIndex;
   final Color? selectedColor;
   final Color? unselectedColor;
@@ -47,7 +47,7 @@ class AppBottomNavigation extends StatelessWidget {
 }
 
 class _BottomNavController extends GetxController {
-  final List<AppBottomNavItem> items;
+  final List<AppBottomNavigationItem> items;
   final RxInt currentIndex;
 
   _BottomNavController({
@@ -58,11 +58,11 @@ class _BottomNavController extends GetxController {
   void changePage(int index) => currentIndex.value = index;
 }
 
-class AppBottomNavItem {
+class AppBottomNavigationItem {
   final Widget page;
   final BottomNavigationBarItem bottomNavItem;
 
-  AppBottomNavItem({
+  AppBottomNavigationItem({
     required this.page,
     required String label,
     required IconData icon,
