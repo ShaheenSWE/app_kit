@@ -38,6 +38,9 @@ abstract final class AppLoading {
 
   static void hide() {
     if (Get.isDialogOpen ?? false) {
+      if (Get.isSnackbarOpen) {
+        Get.closeAllSnackbars();
+      }
       Get.back();
     }
   }

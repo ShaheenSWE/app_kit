@@ -5,7 +5,7 @@ abstract final class AppSnack {
   AppSnack._();
 
   static const SnackPosition _defaultPosition = SnackPosition.TOP;
-  static const SnackStyle _snackStyle = SnackStyle.FLOATING;
+  static const SnackStyle _snackStyle = SnackStyle.GROUNDED;
   static const Color _successColor = Color(0xFF27ae60);
   static const Color _errorColor = Color(0xFFc0392b);
 
