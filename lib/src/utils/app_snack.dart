@@ -32,7 +32,7 @@ abstract final class AppSnack {
     if (Get.isSnackbarOpen) Get.back();
 
     Get.rawSnackbar(
-      message: message,
+      messageText: Text(message,style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
       backgroundColor: backgroundColor,
       snackStyle: _snackStyle,
       snackPosition: _defaultPosition,
