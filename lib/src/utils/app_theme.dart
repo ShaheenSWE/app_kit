@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 abstract final class AppTheme {
   // Default theme configuration
@@ -12,6 +13,11 @@ abstract final class AppTheme {
     String? fontFamily,
     double? buttonRadius,
   }) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+      ),
+    );
     _primaryColor = primaryColor ?? _primaryColor;
     _fontFamily = fontFamily ?? _fontFamily;
     _buttonRadius = buttonRadius ?? _buttonRadius;
