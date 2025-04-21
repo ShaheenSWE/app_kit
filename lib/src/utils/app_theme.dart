@@ -4,14 +4,17 @@ abstract final class AppTheme {
   // Default theme configuration
   static Color _primaryColor = Colors.blue;
   static String _fontFamily = '';
+  static double _buttonRadius = 50;
 
   /// Configure theme in main.dart
   static void config({
     Color? primaryColor,
     String? fontFamily,
+    double? buttonRadius,
   }) {
     _primaryColor = primaryColor ?? _primaryColor;
     _fontFamily = fontFamily ?? _fontFamily;
+    _buttonRadius = buttonRadius ?? _buttonRadius;
   }
 
   /// Get the light theme
@@ -36,7 +39,7 @@ abstract final class AppTheme {
         foregroundColor: Colors.white,
         backgroundColor: _primaryColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(_buttonRadius),
         ),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       ),
@@ -44,19 +47,23 @@ abstract final class AppTheme {
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         foregroundColor: _primaryColor,
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(_buttonRadius),
+        )
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(_buttonRadius),
         borderSide: BorderSide(color: Colors.grey.shade300),
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(_buttonRadius),
         borderSide: BorderSide(color: Colors.grey.shade300),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(_buttonRadius),
         borderSide: BorderSide(color: _primaryColor, width: 2),
       ),
     ),
