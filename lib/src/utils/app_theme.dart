@@ -3,21 +3,15 @@ import 'package:flutter/material.dart';
 abstract final class AppTheme {
   // Default theme configuration
   static Color _primaryColor = Colors.blue;
-  static Color _scaffoldBackgroundColor = Colors.white;
-  static Color _appBarColor = Colors.blue;
-  static Color _appBarTextColor = Colors.white;
+  static String _fontFamily = '';
 
   /// Configure theme in main.dart
   static void config({
     Color? primaryColor,
-    Color? scaffoldBackgroundColor,
-    Color? appBarColor,
-    Color? appBarTextColor,
+    String? fontFamily,
   }) {
     _primaryColor = primaryColor ?? _primaryColor;
-    _scaffoldBackgroundColor = scaffoldBackgroundColor ?? _scaffoldBackgroundColor;
-    _appBarColor = appBarColor ?? _primaryColor;
-    _appBarTextColor = appBarTextColor ?? Colors.white;
+    _fontFamily = fontFamily ?? _fontFamily;
   }
 
   /// Get the light theme
@@ -26,15 +20,15 @@ abstract final class AppTheme {
       primary: _primaryColor,
       secondary: _primaryColor,
     ),
-    scaffoldBackgroundColor: _scaffoldBackgroundColor,
+    scaffoldBackgroundColor: Colors.white,
     appBarTheme: AppBarTheme(
-      color: _appBarColor,
+      color: _primaryColor,
       titleTextStyle: TextStyle(
-        color: _appBarTextColor,
+        color: Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
-      iconTheme: IconThemeData(color: _appBarTextColor),
+      iconTheme: IconThemeData(color: Colors.white,size: 17),
       elevation: 0,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
