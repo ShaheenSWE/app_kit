@@ -8,7 +8,7 @@ import 'package:hugeicons/hugeicons.dart';
 import 'package:get/get.dart';
 
 class AppSnack {
-  AppSnack.success({required String message, bool isDelete = false}) {
+  AppSnack.success(String message, {bool isDelete = false}) {
     unawaited(
       _show(message: message, type: _SnackType.success, isDelete: isDelete),
     );
