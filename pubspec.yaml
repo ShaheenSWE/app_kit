@@ -1,0 +1,38 @@
+name: app_kit
+description: "A Flutter toolkit package for common app infrastructure."
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ^3.11.0
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  drift: ^2.31.0
+  path: ^1.9.0
+  path_provider: ^2.1.5
+  sqlite3_flutter_libs: ^0.5.41
+  elegant_notification: ^2.5.1
+  hugeicons: ^1.1.5
+  get: ^4.7.3
+  dropdown_search: ^6.0.2
+  flutter_spinkit: ^5.2.2
+
+dev_dependencies:
+  build_runner: ^2.10.1
+  drift_dev: ^2.31.0
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+
+  assets:
+    - fonts/
+
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: fonts/cairo.ttf
