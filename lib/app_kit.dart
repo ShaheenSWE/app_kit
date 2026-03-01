@@ -1,4 +1,4 @@
-export 'package:drift/drift.dart';
+export 'package:drift/drift.dart' hide Column;
 export 'src/database/appkit_dao.dart';
 export 'src/database/appkit_database.dart';
 export 'src/database/appkit_seed.dart';
@@ -14,3 +14,4 @@ export 'src/widgets/app_dropdown.dart';
 export 'src/widgets/app_ribbon.dart';
 export 'src/widgets/app_spinner.dart';
 export 'src/theme/app_theme.dart';
+export 'src/utils/app_dialog.dart';
