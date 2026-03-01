@@ -13,3 +13,4 @@ export 'src/widgets/app_text_field.dart';
 export 'src/widgets/app_dropdown.dart';
 export 'src/widgets/app_ribbon.dart';
 export 'src/widgets/app_spinner.dart';
+export 'src/theme/app_theme.dart';
