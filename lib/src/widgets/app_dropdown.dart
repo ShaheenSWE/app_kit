@@ -48,7 +48,9 @@ class _AppDropdownState<T> extends State<AppDropdown<T>> {
     super.initState();
     _items = widget.items;
     if (_items == null && widget.asyncItems != null) {
-      unawaited(_fetchItems()); // fire-and-forget; setState inside handles the rebuild
+      unawaited(
+        _fetchItems(),
+      ); // fire-and-forget; setState inside handles the rebuild
     }
   }
 

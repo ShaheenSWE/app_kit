@@ -8,7 +8,7 @@ import 'buttons_theme.dart';
 class AppTheme {
   AppTheme._();
 
-  static final ThemeData light=ThemeData(
+  static final ThemeData light = ThemeData(
     scaffoldBackgroundColor: Colors.white,
     colorScheme: .fromSeed(seedColor: AppKitColors.blue),
     fontFamily: 'Cairo',
@@ -41,9 +41,7 @@ class AppTheme {
     highlightColor: Colors.transparent,
     splashFactory: NoSplash.splashFactory,
     focusColor: Colors.transparent,
-    iconTheme: const IconThemeData(
-      color: AppKitColors.black,
-    ),
+    iconTheme: const IconThemeData(color: AppKitColors.black),
     dividerTheme: const DividerThemeData(
       color: Colors.black26,
       thickness: 0.3,

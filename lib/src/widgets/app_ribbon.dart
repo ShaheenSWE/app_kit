@@ -6,14 +6,14 @@ class AppRibbon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-      width: 80,
-      height: 6,
-      decoration: const BoxDecoration(
-        color: AppKitColors.blue,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(12),
-          bottomRight: Radius.circular(12),
-        ),
+    width: 80,
+    height: 6,
+    decoration: const BoxDecoration(
+      color: AppKitColors.blue,
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(12),
+        bottomRight: Radius.circular(12),
       ),
-    );
+    ),
+  );
 }

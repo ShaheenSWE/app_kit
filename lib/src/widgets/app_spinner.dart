@@ -5,5 +5,6 @@ class AppSpinner extends StatelessWidget {
   const AppSpinner({super.key});
 
   @override
-  Widget build(BuildContext context) => const SpinKitThreeBounce(color: Colors.black12, size: 15);
+  Widget build(BuildContext context) =>
+      const SpinKitThreeBounce(color: Colors.black12, size: 15);
 }

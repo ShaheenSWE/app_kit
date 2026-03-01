@@ -4,15 +4,12 @@ import '../utils/app_kit_colors.dart';
 class TextFieldTheme {
   TextFieldTheme._();
 
-  static const InputDecorationTheme theme=InputDecorationTheme(
+  static const InputDecorationTheme theme = InputDecorationTheme(
     isDense: true,
     filled: true,
     fillColor: Colors.white,
     alignLabelWithHint: true,
-    labelStyle: TextStyle(
-      color: Colors.black45,
-      fontFamily: 'Cairo',
-    ),
+    labelStyle: TextStyle(color: Colors.black45, fontFamily: 'Cairo'),
     floatingLabelStyle: TextStyle(
       color: AppKitColors.blue,
       fontWeight: FontWeight.w800,

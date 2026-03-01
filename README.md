@@ -13,6 +13,7 @@ import 'package:app_kit/app_kit.dart';
   - `AppKitTable`
   - `openAppKitConnection()`
   - `AppKitMigration`
+  - `appKitSeed(...)` (separate typed seeds)
   - `AppKitCrudDao`
   - `db.crud(table)` extension
 - Utilities:
@@ -63,6 +64,41 @@ Generate Drift code:
 ```bash
 dart run build_runner build --delete-conflicting-outputs
 ```
+
+## Database seeding (separate, typed)
+
+Define table as usual:
+
+```dart
+class CategoryTypes extends AppKitTable {
+  TextColumn get name => text().withLength(min: 1, max: 100)();
+}
+```
+
+Define seeds directly in database (simple):
+
+```dart
+@DriftDatabase(tables: [CategoryTypes])
+class AppDatabase extends _$AppDatabase with AppKitMigration {
+  AppDatabase() : super(openAppKitConnection());
+
+  @override
+  List<AppKitSeedEntry> get appKitSeeds => <AppKitSeedEntry>[
+    seed(
+      categoryTypes,
+      <Insertable<CategoryType>>[
+        CategoryTypesCompanion.insert(name: 'Income'),
+        CategoryTypesCompanion.insert(name: 'Expense'),
+      ],
+    ),
+  ];
+
+  @override
+  int get schemaVersion => 1;
+}
+```
+
+Seeds are inserted in batch automatically on first create only (`onCreate`).
 
 ## Snackbar usage
 

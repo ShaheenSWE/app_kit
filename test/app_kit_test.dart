@@ -9,11 +9,23 @@ class Users extends AppKitTable {
   IntColumn get age => integer().check(age.isBiggerOrEqualValue(0))();
 }
 
-@DriftDatabase(tables: <Type>[Users])
+class CategoryTypes extends AppKitTable {
+  TextColumn get name => text().withLength(min: 1, max: 100)();
+}
+
+@DriftDatabase(tables: <Type>[Users, CategoryTypes])
 class AppDatabase extends _$AppDatabase with AppKitMigration {
   AppDatabase(QueryExecutor executor) : super(executor);
 
   AppDatabase.test() : super(NativeDatabase.memory());
+
+  @override
+  List<AppKitSeedEntry> get appKitSeeds => <AppKitSeedEntry>[
+    seed(categoryTypes, <Insertable<CategoryType>>[
+      CategoryTypesCompanion.insert(name: 'Income'),
+      CategoryTypesCompanion.insert(name: 'Expense'),
+    ]),
+  ];
 
   @override
   int get schemaVersion => 1;
@@ -41,6 +53,17 @@ void main() {
 
     await dao.deleteById(id);
     expect(await dao.getAll(), isEmpty);
+
+    await db.close();
+  });
+
+  test('seeds are inserted automatically during first create', () async {
+    final db = AppDatabase.test();
+    final categoriesDao = db.crud(db.categoryTypes);
+
+    final seeded = await categoriesDao.getAll();
+    expect(seeded.length, 2);
+    expect(seeded.map((e) => e.name).toSet(), <String>{'Income', 'Expense'});
 
     await db.close();
   });
