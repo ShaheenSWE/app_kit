@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:app_kit/src/utils/app_kit_colors.dart';
 import 'package:elegant_notification/elegant_notification.dart';
 import 'package:elegant_notification/resources/arrays.dart';
 import 'package:elegant_notification/resources/stacked_options.dart';
@@ -28,10 +27,10 @@ class AppSnack {
     bool isDelete = false,
   }) async {
     final Color color = type == _SnackType.success
-        ? AppKitColors.green
+        ? Color(0xFF27ae60)
         : type == _SnackType.error
-        ? AppKitColors.red
-        : AppKitColors.orange;
+        ? Color(0xFFc0392b)
+        : Color(0xFFf39c12);
 
     ElegantNotification(
       description: Text(message),

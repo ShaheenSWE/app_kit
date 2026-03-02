@@ -1,4 +1,3 @@
-import 'package:app_kit/src/utils/app_kit_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppRibbon extends StatelessWidget {
@@ -9,7 +8,7 @@ class AppRibbon extends StatelessWidget {
     width: 80,
     height: 6,
     decoration: const BoxDecoration(
-      color: AppKitColors.blue,
+      color: Color(0xFF2980b9),
       borderRadius: BorderRadius.only(
         bottomLeft: Radius.circular(12),
         bottomRight: Radius.circular(12),

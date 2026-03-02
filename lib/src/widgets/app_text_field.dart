@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hugeicons/hugeicons.dart';
 
-import '../utils/app_kit_colors.dart';
-
 class AppTextField extends StatefulWidget {
   const AppTextField({
     required this.label,
@@ -111,7 +109,7 @@ class _AppTextFieldState extends State<AppTextField> {
       label: Text(
         widget.label,
         style: TextStyle(
-          color: _isFocused ? AppKitColors.blue : Colors.black45,
+          color: _isFocused ? Color(0xFF2980b9) : Colors.black45,
         ),
       ),
       hintText: widget.hint,

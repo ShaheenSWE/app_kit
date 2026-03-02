@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 
-import '../utils/app_kit_colors.dart';
-
 class AppTable<T> extends StatelessWidget {
   const AppTable({
     required this.headers,
@@ -55,7 +53,7 @@ class AppTable<T> extends StatelessWidget {
                 itemCount: 30,
                 itemBuilder: (context, index) => _AppTableRowEmpty<T>(
                   cellWidths: cellWidths,
-                  color: index.isEven ? Colors.white : AppKitColors.grey1,
+                  color: index.isEven ? Colors.white : Color(0xFFF8FAFC),
                   onInfo: onInfo,
                   onEdit: onEdit,
                   onDelete: onDelete,
@@ -90,7 +88,7 @@ class AppTable<T> extends StatelessWidget {
                     cellWidths: cellWidths,
                     cellBuilders: cellBuilders,
                     data: items[index],
-                    color: index.isEven ? Colors.white : AppKitColors.grey1,
+                    color: index.isEven ? Colors.white : Color(0xFFF8FAFC),
                     onInfo: onInfo,
                     onEdit: onEdit,
                     onDelete: onDelete,
@@ -274,7 +272,7 @@ class _AppTableRow<T> extends StatelessWidget {
               onPressed: () => onInfo!(data),
               icon: const HugeIcon(
                 icon: HugeIcons.strokeRounded0Square,
-                color: AppKitColors.black,
+                color: Color(0xFF2d3436),
                 size: 20,
               ),
             ),
@@ -283,7 +281,7 @@ class _AppTableRow<T> extends StatelessWidget {
               onPressed: () => onEdit!(data),
               icon: const HugeIcon(
                 icon: HugeIcons.strokeRoundedBookEdit,
-                color: AppKitColors.blue,
+                color: Color(0xFF2980b9),
                 size: 20,
               ),
             ),
@@ -292,7 +290,7 @@ class _AppTableRow<T> extends StatelessWidget {
               onPressed: () => onDelete!(data),
               icon: const HugeIcon(
                 icon: HugeIcons.strokeRoundedColumnDelete,
-                color: AppKitColors.red,
+                color: Color(0xFFc0392b),
                 size: 20,
               ),
             ),
@@ -323,7 +321,7 @@ class _AppTableHeader<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
     height: 36,
-    decoration: const BoxDecoration(color: AppKitColors.black),
+    decoration: const BoxDecoration(color: Color(0xFF2d3436)),
     child: Row(
       children: [
         Expanded(
